@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Atom SBY",
+        "species": "Golden Retriever",
+        "birthYear": 2017,
+        "gender": "male",
+        "speciality": "Autism Service Dogs",
+        "availability": true,
+        "imagePath": "https://toppng.com//public/uploads/preview/dog-web-res-golden-retriever-service-dog-11562895164b0i48z6a8v.png",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Pacman",
+        "species": "Poodle",
+        "birthYear": 2015,
+        "gender": "male",
+        "speciality": "Diabetic Alert Dogs",
+        "availability": true,
+        "imagePath": "https://media.gannett-cdn.com/38321750001/38321750001_5816786423001_5816785657001-vs.jpg?pubId=38321750001&width=660&height=371&format=pjpg&auto=webp",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Erza",
+        "species": "Golden Retriever",
+        "birthYear": 2017,
+        "gender": "female",
+        "speciality": "Hearing Service Dogs",
+        "availability": true,
+        "imagePath": "https://petvblog.com/wp-content/uploads/2020/06/can-golden-retriever-be-a-service-dog-1024x683.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Grace",
+        "species": "German Shepperd",
+        "birthYear": 2010,
+        "gender": "female",
+        "speciality": "Seizure Response Dogs",
+        "availability": false,
+        "imagePath": "https://servicedogspot.com/images/grace.png",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Kanye West",
+        "species": "Labrador Retriever",
+        "birthYear": 2016,
+        "gender": "male",
+        "speciality": "Seizure Response Dogs",
+        "availability": true,
+        "imagePath": "https://i.ytimg.com/vi/lV_g9MbXcdc/maxresdefault.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Justin Beeba",
+        "species": "Border Collie",
+        "birthYear": 2014,
+        "gender": "male",
+        "speciality": "Anxiety Alert Dogs",
+        "availability": true,
+        "imagePath": "http://www.servicedogs.goldenheartk9s.org/images/sparrow.png",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Franklin GTA5",
+        "species": "Rottweiler",
+        "birthYear": 2019,
+        "gender": "male",
+        "speciality": "Mobility Assistance Dogs",
+        "availability": true,
+        "imagePath": "https://i.redd.it/fj04ga167wr21.jpg",
+        "biodata": "biodata of the dogs"
+    }
+]

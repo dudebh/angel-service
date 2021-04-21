@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header', { title: 'Our Wonderfull Service Dogs'}) %>
+<body>
+    <%- include('partials/navbar') %>
+    <%- include('partials/dogsHeading', { retired }) %>
+    <table align="center" BORDER="2" FRAME="VSIDES, below" RULES="ALL" style="width: 50%;">
+        <thead>
+            <tr style="background-color:darkgray;">
+                <th>No</th>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Birth Year</th>
+                <th>Gender</th>
+                <th>Speciality</th>
+                <th>Availability</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% dogs.forEach((el, idx) => { %>
+               <% if(idx % 2 != 0) { %>
+                    <tr style="background-color:rgb(226, 222, 222);"">
+               <% } 
+                else { %>
+                    <tr>
+               <% } %>
+                    <td><%= idx + 1 %></td>
+                    <td><%= el.name %></td>
+                    <td><%= el.species %></td>
+                    <td><%= el.birthYear %></td>
+                    <td><%= el.gender %></td>
+                    <td><%= el.speciality %></td>
+                    <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
+                    <td>
+                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">
+                            See Details
+                        </a>
+                    </td>
+                </tr>
+        <%  }) %>
+        </tbody>
+    </table>
+</body>
+<%- include('partials/footer') %>
+</html>
