@@ -1,4 +1,5 @@
 const { Dog } = require('../models')
+const dogExplanation = require('../data/biodataOfServiceDogs.json')
 
 class DogController {
     static displayDogs (req, res) {
@@ -8,8 +9,7 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
-            res.render('dogs', { dogs: result, retired: false})
+            res.render('dogs', { dogs: result})
         })
         .catch(err => {
             res.send(err)
@@ -23,8 +23,7 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
-            res.render('dogs', { dogs: result, retired: true})
+            res.render('dogs', { dogs: result})
         })
         .catch(err => {
             res.send(err)
@@ -38,8 +37,7 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
-            res.render('adminViews/dogsAdmin', { dogs: result, retired: false})
+            res.render('adminViews/dogsAdmin', { dogs: result})
         })
         .catch(err => {
             res.send(err)
@@ -52,9 +50,8 @@ class DogController {
                 availability: false
             }
         })
-        .then(result => {
-            // console.log(result);
-            res.render('adminViews/dogsAdmin', { dogs: result, retired: true})
+        .then(result => {            
+            res.render('adminViews/retiredDogs', {dogs: result})
         })
         .catch(err => {
             res.send(err)
@@ -67,8 +64,8 @@ class DogController {
         Dog.destroy({
             where: { id: id}
         })
-        .then(result => {
-            res.redirect('/dogs/admin')
+        .then(() => {
+            res.redirect('/dogs/retiredDogAdmin')
         })
         .catch(err => {
             res.send(err)
@@ -106,7 +103,7 @@ class DogController {
                 id: id
             }
         })
-        .then(result => {
+        .then(result => {        
             res.render('adminViews/editDog', {dog: result})
         })
     }
@@ -120,9 +117,10 @@ class DogController {
             birthYear: req.body.birthYear,
             gender: req.body.gender,
             speciality: req.body.speciality,
+            availability: req.body.availability,
             biodata: req.body.biodata,
             updateAt: new Date()
-        }
+        }        
 
         Dog.update(obj, {
             where: {
@@ -145,9 +143,8 @@ class DogController {
                 id: id
             }
         })
-        .then(result => {
-            // res.send(`di details`)
-            res.render('detailsDog', {dog: result})
+        .then(result => {            
+            res.render('detailsDog', {dog: result, detail: dogExplanation})
         })
         .catch(err => {
             res.send(err)
