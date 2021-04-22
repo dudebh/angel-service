@@ -9,7 +9,6 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
             res.render('dogs', { dogs: result})
         })
         .catch(err => {
@@ -24,7 +23,6 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
             res.render('dogs', { dogs: result})
         })
         .catch(err => {
@@ -39,7 +37,6 @@ class DogController {
             }
         })
         .then(result => {
-            // console.log(result);
             res.render('adminViews/dogsAdmin', { dogs: result})
         })
         .catch(err => {
@@ -106,8 +103,7 @@ class DogController {
                 id: id
             }
         })
-        .then(result => {
-            // console.log(result);
+        .then(result => {        
             res.render('adminViews/editDog', {dog: result})
         })
     }
@@ -124,8 +120,7 @@ class DogController {
             availability: req.body.availability,
             biodata: req.body.biodata,
             updateAt: new Date()
-        }
-        // console.log(obj);
+        }        
 
         Dog.update(obj, {
             where: {
