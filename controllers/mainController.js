@@ -1,11 +1,15 @@
-const {User} = require('../models')
+const {User, Dog} = require('../models')
 const nodemailer = require("nodemailer");
 
 const passCompare = require('../helpers/bcryptCompare')
 
 class MainController{
     static displayHome (req, res){
-        res.render('home',{title: 'Home'})
+        Dog
+            .findAll()
+            .then(data=>{
+                res.render('home',{data, title: 'Home'})
+            })
     }
 
     static displayFormLogin(req, res){
@@ -101,6 +105,10 @@ class MainController{
           .catch(err=>{
               res.send(err)
           })
+    }
+
+    static showAdminView(req, res){
+        res.render('adminViews/adminView',{title: 'admin'})
     }
 }
 

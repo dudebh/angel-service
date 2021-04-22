@@ -8,7 +8,6 @@ const router = require('./routes')
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended: true}))
 
-const router = require('./routes')
 const dogsRouter = require('./routes/dogsRouter')
 
 app.use(session({

@@ -6,6 +6,18 @@
         <%- include('partials/navbar') %>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
             <h1>Welcome to Angel's Services</h1>
+            <div style="padding: 10px">
+                <% data.forEach(e=>{ %>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= e.imagePath %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= e.name %></h5>
+                          <p class="card-text"><%= e.biodate %></p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                <% })%>
+            </div>
         </div>
         <%- include('partials/footer') %>
     </div>

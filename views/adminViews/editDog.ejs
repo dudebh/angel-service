@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header', { title: 'Edit a Dog'}) %>
+<%- include('../partials/header',{title: 'edit dog'}) %>
 <body>
-    <%- include('../partials/navbar') %>
-    <form action="/dogs/editDog/<%= dog.id %>" method="POST" align="center">
-        <h1 align="center">Edit a Dog</h1> <br>
-        <label for="name">Name</label> <br>
-        <input type="text" name="name" value="<%= dog.name %>"> <br>
-    
-        <label for="species">Species</label> <br>
-        <input type="text" name="species" value="<%= dog.species %>"> <br>
-    
-        <label for="birthYear">Birth Year</label> <br>
-        <input type="number" name="birthYear" value="<%= dog.birthYear%>"> <br>
-    
-        <label for="gender">Gender</label> <br>
-
-        <% let options = ['male', 'female'] 
-            options.forEach(el => {
-                let checked = (el == dog.gender) ? "checked" : "" ; %>
-                <input type="radio" name="gender" value="<%= el %>" <%= checked %>>
-                <label for=""><%= el %></label>
-            <% }) %>
-        <br>
-        
-        <label for="speciality">Speciality</label> <br>
-        <select name="speciality" name="speciality">
-        <% let speciality = ['Autism Service Dogs', 'Diabetic Alert Dogs', 'Hearing Service Dogs', 'Seizure Response Dogs', 'Anxiety Alert Dogs', 'Mobility Assistance Dogs']
-
-            speciality.forEach(el => {
-                let selected = (el == dog.speciality) ? "selected" : "" ; %>
-                <option value="<%= el %>" <%= selected %>>
-                    <%= el %>
-                </option>
-            <% }) %>
-            <br>
-        </select> <br>
-
-        <label for="biodata">Biodata</label> <br>
-        <textarea name="biodata" cols="60" rows="3"><%= dog.biodata %></textarea> <br>
-
-        <button type="submit">Save</button>
-    </form>
+    <div class="container py-3">
+        <%- include('../partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/dogs/admin">Dogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user">User</a>
+                </li>
+            </ul>
+            <div style="text-align: left;padding-top: 20px;">
+                <form action="/dogs/editDog/<%= dog.id %>" method="POST" align="center">
+                    <h1 align="center">Edit a Dog</h1> <br>
+                    <label for="name">Name</label> <br>
+                    <input type="text" name="name" value="<%= dog.name %>"> <br>
+                
+                    <label for="species">Species</label> <br>
+                    <input type="text" name="species" value="<%= dog.species %>"> <br>
+                
+                    <label for="birthYear">Birth Year</label> <br>
+                    <input type="number" name="birthYear" value="<%= dog.birthYear%>"> <br>
+                
+                    <label for="gender">Gender</label> <br>
+            
+                    <% let options = ['male', 'female'] 
+                        options.forEach(el => {
+                            let checked = (el == dog.gender) ? "checked" : "" ; %>
+                            <input type="radio" name="gender" value="<%= el %>" <%= checked %>>
+                            <label for=""><%= el %></label>
+                        <% }) %>
+                    <br>
+                    
+                    <label for="speciality">Speciality</label> <br>
+                    <select name="speciality" name="speciality">
+                    <% let speciality = ['Autism Service Dogs', 'Diabetic Alert Dogs', 'Hearing Service Dogs', 'Seizure Response Dogs', 'Anxiety Alert Dogs', 'Mobility Assistance Dogs']
+            
+                        speciality.forEach(el => {
+                            let selected = (el == dog.speciality) ? "selected" : "" ; %>
+                            <option value="<%= el %>" <%= selected %>>
+                                <%= el %>
+                            </option>
+                        <% }) %>
+                        <br>
+                    </select> <br>
+            
+                    <label for="biodata">Biodata</label> <br>
+                    <textarea name="biodata" cols="60" rows="3"><%= dog.biodata %></textarea> <br>
+            
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
 </body>
-<%- include('../partials/footer') %>
 </html>
