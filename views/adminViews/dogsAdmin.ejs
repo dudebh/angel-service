@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header', { title: 'Our Wonderfull Service Dogs'}) %>
+<%- include('../partials/header', { title: 'Welcome to the Pack'}) %>
 <body>
     <%- include('../partials/navbar') %>
-    <%- include('../partials/dogsHeading', { retired }) %>
+    <%- include('../partials/dogsHeading', { title: 'Welcome to the Pack'}) %>
     <h4 align="center"><a style="text-decoration: none; color:teal;" href="addDog">Add a Service Dog</a></h4>
     <table align="center" BORDER="2" FRAME="VSIDES, below" RULES="ALL" style="width: 50%;">
         <thead>
@@ -35,10 +35,6 @@
                     <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                     <td>
                         <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
-
-                        <% if (retired == true) { %>
-                           &nbsp;|&nbsp;<a href="/dogs/delete/<%= el.id %>" onclick="return confirm('Are you sure you want to delete this cute doggo?')" style="text-decoration: none; color:steelblue;">Delete</a>
-                        <% } %>
                         
                     </td>
                 </tr>

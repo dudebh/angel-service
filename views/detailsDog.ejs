@@ -15,15 +15,20 @@
     
   </figure> <br> <br>
 
-<p class="text-center">Center aligned text on all viewport sizes.</p> <br> <br> <br>
 
 
-<p class="text-end">End aligned text on all viewport sizes.</p>
+<p class="text-center"><%= dog.biodata %></p> <br>
 
-<p class="text-sm-start">Start aligned text on viewports sized SM (small) or wider.</p>
-<p class="text-md-start">Start aligned text on viewports sized MD (medium) or wider.</p>
-<p class="text-lg-start">Start aligned text on viewports sized LG (large) or wider.</p>
-<p class="text-xl-start">Start aligned text on viewports sized XL (extra-large) or wider.</p>
+<% detail.forEach(el => {
+  if(dog.speciality == el.speciality) { %>
+    <div style="max-width: 30%; margin: auto;">
+      <p class="text-center"><%= el.detail %> </p> <br>
+    </div>
+<% }
+}) %>
+
+<p class="text-end" > <a href="" style="text-decoration: none; color: sienna; font-size: xx-large;">Rent me please</a> </p>
+
 
 </body>
 <%- include('partials/footer') %>

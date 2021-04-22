@@ -22,7 +22,17 @@
                 <input type="radio" name="gender" value="<%= el %>" <%= checked %>>
                 <label for=""><%= el %></label>
             <% }) %>
-        <br>
+        <br> <br>
+
+        <label for="availability">Change Availability</label> <br>
+        <% let availability = [false, true] 
+            let option = ['Is Retired', 'Will Work Again']
+            availability.forEach((el, idx) => {
+                let check = (el == dog.availability) ? "checked" : "" ; %>
+                <input type="radio" name="availability" value="<%= el %>" <%= check %>>
+                <label><%= option[idx] %></label>
+            <% }) %>
+            <br> <br>
         
         <label for="speciality">Speciality</label> <br>
         <select name="speciality" name="speciality">
@@ -36,6 +46,9 @@
             <% }) %>
             <br>
         </select> <br>
+
+        <label for="imagePath">Image Path</label> <br>
+        <textarea type="text" name="imagePath" cols="60" rows="1"><%= dog.imagePath %></textarea> <br>
 
         <label for="biodata">Biodata</label> <br>
         <textarea name="biodata" cols="60" rows="3"><%= dog.biodata %></textarea> <br>
