@@ -4,19 +4,24 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Dog extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate(models) {
-      // define association here
+      Dog.belongsToMany( models.User, { through: models.Transaction})
     }
   };
   Dog.init({
     name: DataTypes.STRING,
     species: DataTypes.STRING,
-    birthYear: DataTypes.INTEGER,
+    birthYear: {
+      type: DataTypes.INTEGER,
+      validate: {
+        mustBeMoreThanOneYearOld () {
+          if ((this.birthYear + 1 ) == new Date().getFullYear()) {
+            throw new Error(`Not mature enough for the profesional cannine world`)
+          }
+        }
+      }
+    },
     gender: DataTypes.STRING,
     speciality: DataTypes.STRING,
     availability: DataTypes.BOOLEAN,

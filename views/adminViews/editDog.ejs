@@ -15,29 +15,39 @@
                 </li>
             </ul>
             <div style="text-align: left;padding-top: 20px;">
+                
                 <form action="/dogs/editDog/<%= dog.id %>" method="POST" align="center">
+
                     <h1 align="center">Edit a Dog</h1> <br>
-                    <label for="name">Name</label> <br>
-                    <input type="text" name="name" value="<%= dog.name %>"> <br>
-                
-                    <label for="species">Species</label> <br>
-                    <input type="text" name="species" value="<%= dog.species %>"> <br>
-                
-                    <label for="birthYear">Birth Year</label> <br>
-                    <input type="number" name="birthYear" value="<%= dog.birthYear%>"> <br>
-                
-                    <label for="gender">Gender</label> <br>
+
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
+                        <span class="input-group-text" id="basic-addon1">Name</span>
+                        <input value="<%= dog.name %>" name="name" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
+                        <span class="input-group-text" id="basic-addon1">Species</span>
+                        <input value="<%= dog.species %>" name="species" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>                    
+
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
+                        <span class="input-group-text" id="basic-addon1">Birth Year</span>
+                        <input value="<%= dog.birthYear%>" name="birthYear" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>                                  
             
                     <% let options = ['male', 'female'] 
                         options.forEach(el => {
                             let checked = (el == dog.gender) ? "checked" : "" ; %>
-                            <input type="radio" name="gender" value="<%= el %>" <%= checked %>>
-                            <label for=""><%= el %></label>
+
+                            <div class="input-group-text" style="max-width: 3.5%; display: inline-block;" >
+                                <input value="<%= el %>" name="gender" class="form-check-input mt-0" type="radio" value="male" aria-label="Radio button for following text input" <%= checked %>>
+                              </div>
+                              <label for=""><%= el %></label>
                         <% }) %>
-                    <br>
-                    
+                    <br> <br>   
+
                     <label for="speciality">Speciality</label> <br>
-                    <select name="speciality" name="speciality">
+                    <select  style="max-width: 17%; margin: auto;" class="form-select" aria-label="Default select example" name="speciality">
                     <% let speciality = ['Autism Service Dogs', 'Diabetic Alert Dogs', 'Hearing Service Dogs', 'Seizure Response Dogs', 'Anxiety Alert Dogs', 'Mobility Assistance Dogs']
             
                         speciality.forEach(el => {
@@ -48,11 +58,34 @@
                         <% }) %>
                         <br>
                     </select> <br>
-            
-                    <label for="biodata">Biodata</label> <br>
-                    <textarea name="biodata" cols="60" rows="3"><%= dog.biodata %></textarea> <br>
-            
-                    <button type="submit">Save</button>
+
+                    <label for="availability">Change Availability</label> <br>
+                    <% let availability = [false, true] 
+                        let option = ['Is Retired', 'Will Work Again']
+                        availability.forEach((el, idx) => {
+                        let check = (el == dog.availability) ? "checked" : "" ; %>
+
+                        <div class="input-group-text" style="max-width: 3.5%; display: inline-block;" >
+                            <input value="<%= el %>" name="availability" class="form-check-input mt-0" type="radio" value="male" aria-label="Radio button for following text input" <%= check %>>
+                        </div>
+                        <label><%= option[idx] %></label>
+
+                    <% }) %>
+                    <br> <br>
+
+                    <label for="basic-url" class="form-label">Image URL</label>
+                    <div class="input-group mb-3" style="max-width: 70%; margin: auto;">
+                        <span class="input-group-text" id="basic-addon3">https://image.com/</span>
+                        <input value="<%= dog.imagePath %>" name="imagePath" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+
+                    <div class="input-group" style="max-width: 70%; margin: auto;">
+                        <span class="input-group-text">Write some detail about this dog</span>
+                        <textarea class="form-control" aria-label="With textarea" name="biodata"><%= dog.biodata %></textarea>
+                      </div> <br>
+
+                    <button type="submit" class="btn btn-success">Save</button>
+
                 </form>
             </div>
         </div>

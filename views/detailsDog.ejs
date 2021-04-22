@@ -6,7 +6,7 @@
     <h1 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Hello My Name is <%= dog.name %>, Nice to Meet You</h1> <br>
 
 
-  <% if(dog.imagePath == null || dog.imagePath == undefined) { %>
+  <% if(dog.imagePath == null || dog.imagePath == undefined || dog.imagePath == '') { %>
     <img src="https://wcc.yccd.edu/wp-content/uploads/2020/02/Dog.png" alt="" style="border-radius: 20px; width: 400px;" >
     <% }
     else { %>

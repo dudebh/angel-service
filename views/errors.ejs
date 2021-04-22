@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header', {title: 'Error'}) %>
+ <br>
+<figure class="text-center">
+
+    <% errors.forEach(el => { %>
+        <blockquote class="blockquote">
+          <p style="color: crimson;"><%= el.message %></p>
+        </blockquote>
+
+    <% }) %>
+
+    <figcaption class="blockquote-footer">
+      An Old Wise Canine Said So<cite title="Source Title"></cite>
+    </figcaption>
+  </figure>

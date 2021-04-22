@@ -7,7 +7,7 @@
     
     
     <%- include('partials/theadStyle') %>
-        <thead>
+        <thead <%- include('partials/fontForTable') %>>
             <tr style="background-color:darkgray;">
                 <th>No</th>
                 <th>Name</th>
@@ -19,7 +19,7 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody <%- include('partials/fontForTable') %>>
             <% dogs.forEach((el, idx) => { %>
                <% if(idx % 2 != 0) { %>
                     <tr style="background-color:rgb(226, 222, 222);">
@@ -35,12 +35,9 @@
                     <td><%= el.speciality %></td>
                     <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                     <td>
-                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">
-                            See Details
-                        </a>&nbsp;|&nbsp;
+                        <a style="background-color: sienna;" class="btn btn-primary" href="/dogs/details/<%= el.id %>" role="button">See Details</a> &nbsp; &nbsp; &nbsp;
 
-                        <a href="/dogs/rent/<%= el.id %>" style="text-decoration: none; color:steelblue;">Rent
-                        </a>
+                        <a style="background-color: turquoise;" class="btn btn-primary" href="/dogs/rent/<%= el.id %>" role="button">Rent</a>
                     </td>
                 </tr>
         <%  }) %>

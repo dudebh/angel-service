@@ -18,26 +18,33 @@
                 <form action="/dogs/addDog" method="POST" align="center">
                     <h1 align="center">Add a Service Dog</h1> <br>
 
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
                         <span class="input-group-text" id="basic-addon1">Name</span>
-                        <input name="name" type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
-                      </div>
-                
-                    <label for="species">Species</label> <br>
-                    <input type="text" name="species"> <br>
-                
-                    <label for="birthYear">Birth Year</label> <br>
-                    <input type="number" name="birthYear"> <br>
-                
-                    <label for="gender">Gender</label> <br>
+                        <input name="name" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
+                        <span class="input-group-text" id="basic-addon1">Species</span>
+                        <input name="species" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
                     
-                    <input type="radio" name="gender" value="male">
-                    <label for="">Male</label>
-                    <input type="radio" name="gender" value="female">
-                    <label for="">Female</label> <br>
-                
+                    <div class="input-group mb-3" style="max-width: 30%; margin: auto;" >
+                        <span class="input-group-text" id="basic-addon1">Birth Year</span>
+                        <input name="birthYear" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>                              
+
+                    <div class="input-group-text" style="max-width: 3.5%; display: inline-block;" >
+                        <input name="gender" class="form-check-input mt-0" type="radio" value="male" aria-label="Radio button for following text input">
+                      </div>
+                      <label for="">Male</label>
+
+                    <div class="input-group-text" style="max-width: 3.5%; display: inline-block;">
+                        <input name="gender" class="form-check-input mt-0" type="radio" value="female" aria-label="Radio button for following text input">
+                      </div>
+                      <label for="">Female</label> <br> <br>
+                                                              
                     <label for="speciality">Speciality</label> <br>
-                    <select name="speciality" name="speciality">
+                    <select  style="max-width: 17%; margin: auto;" class="form-select" aria-label="Default select example" name="speciality">
                         <option selected disabled>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---Select---
                         </option>
@@ -50,18 +57,17 @@
                     </select> <br>
 
                     <label for="basic-url" class="form-label">Image URL</label>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" style="max-width: 70%; margin: auto;">
                         <span class="input-group-text" id="basic-addon3">https://image.com/</span>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        <input name="imagePath" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                                 
-                    <div class="input-group">
+                    <div class="input-group" style="max-width: 70%; margin: auto;">
                         <span class="input-group-text">Write some detail about this dog</span>
                         <textarea class="form-control" aria-label="With textarea" name="biodata"></textarea>
-                      </div>
-            
-                    <button type="submit">Save</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                      </div> <br>
+
+                    <button type="submit" class="btn btn-success">Save</button>
                 </form>
             </div>
         </div>

@@ -4,9 +4,9 @@
 <body>
     <%- include('../partials/navbar') %>
     <%- include('../partials/dogsHeading', { title: 'Welcome to the Pack'}) %>
-    <h4 align="center"><a style="text-decoration: none; color:teal;" href="addDog">Add a Service Dog</a></h4>
+    <h4 align="center"><a style="text-decoration: none; color:teal;" href="addDog">Add a Service Dog</a></h4> <br>
     <%- include('../partials/theadStyle') %>
-        <thead>
+        <thead <%- include('../partials/fontForTable') %>>
             <tr style="background-color:darkgray;">
                 <th>No</th>
                 <th>Name</th>
@@ -18,7 +18,7 @@
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody <%- include('../partials/fontForTable') %>>
             <% dogs.forEach((el, idx) => { %>
                <% if(idx % 2 != 0) { %>
                     <tr style="background-color:rgb(226, 222, 222);">
@@ -34,7 +34,9 @@
                     <td><%= el.speciality %></td>
                     <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                     <td>
-                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
+                        <a style="background-color: sienna;" class="btn btn-primary" href="/dogs/details/<%= el.id %>" role="button">See Details</a> &nbsp; &nbsp; &nbsp;
+
+                        <a style="background-color: teal;" class="btn btn-primary" href="/dogs/editDog/<%= el.id %>" role="button">Edit</a>
                         
                     </td>
                 </tr>
@@ -42,13 +44,16 @@
         </tbody>
     </table>
 </body>
+<div align="center">
+    <a style="background-color: royalblue;" class="btn btn-primary" href="/dogs/retiredDogAdmin" role="button">Go to Retired Dogs</a>
+</div>
+
 <%- include('../partials/footer') %>
 </html>
 
 
 <!-- nnti di hapus ato ubah cmn mempergmpng dev aja -->
 <h1 align="center">
-    <a href="/dogs/retiredDogAdmin">retired dogs admin</a>
 
 
 </h1>
