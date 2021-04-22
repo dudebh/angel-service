@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Atom SBY",
+        "species": "Golden Retriever",
+        "birthYear": 2017,
+        "gender": "male",
+        "speciality": "Autism Service Dogs",
+        "availability": true,
+        "imagePath": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2016/11/08092232/service-dog-training-101.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Pebo",
+        "species": "Poodle",
+        "birthYear": 2015,
+        "gender": "male",
+        "speciality": "Diabetic Alert Dogs",
+        "availability": true,
+        "imagePath": "https://media.gannett-cdn.com/38321750001/38321750001_5816786423001_5816785657001-vs.jpg?pubId=38321750001&width=660&height=371&format=pjpg&auto=webp",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Erza",
+        "species": "Golden Retriever",
+        "birthYear": 2017,
+        "gender": "female",
+        "speciality": "Hearing Service Dogs",
+        "availability": true,
+        "imagePath": "https://petvblog.com/wp-content/uploads/2020/06/can-golden-retriever-be-a-service-dog-1024x683.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Bolu",
+        "species": "German Shepperd",
+        "birthYear": 2010,
+        "gender": "female",
+        "speciality": "Seizure Response Dogs",
+        "availability": false,
+        "imagePath": "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc1MzEwODQ4NzMzMDI5NjE0/german-shepherd-service-dogs.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Kanye West",
+        "species": "Labrador Retriever",
+        "birthYear": 2016,
+        "gender": "male",
+        "speciality": "Seizure Response Dogs",
+        "availability": true,
+        "imagePath": "https://i.ytimg.com/vi/lV_g9MbXcdc/maxresdefault.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Justin Beeba",
+        "species": "Border Collie",
+        "birthYear": 2014,
+        "gender": "male",
+        "speciality": "Anxiety Alert Dogs",
+        "availability": true,
+        "imagePath": "http://4.bp.blogspot.com/-iuYW_v2kWAA/Vo8WWENwpSI/AAAAAAAAjwU/LDA9A5NoRn8/s400/Service%2BDog%2B1.jpg",
+        "biodata": "biodata of the dogs"
+    },
+    {
+        "name": "Franklin GTA5",
+        "species": "Rottweiler",
+        "birthYear": 2019,
+        "gender": "male",
+        "speciality": "Mobility Assistance Dogs",
+        "availability": true,
+        "imagePath": "https://s4.bukalapak.com/uploads/content_attachment/48110c2810e8d762052892c5/w-744/03_a-love-of-rottweilers.jpg", 
+        "biodata": "biodata of the dogs"
+    }
+]

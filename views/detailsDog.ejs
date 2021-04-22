@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header', { title: 'Our Wonderfull Service Dogs'}) %>
+<body align="center">
+    <%- include('partials/navbar') %>
+    <h1 align="center">Hello My Name is <%= dog.name %>, Nice to Meet You</h1> <br>
+
+<figure class="figure">
+  <% if(dog.imagePath == null || dog.imagePath == undefined) { %>
+    <img src="https://wcc.yccd.edu/wp-content/uploads/2020/02/Dog.png" alt="">
+    <% }
+    else { %>
+      <img src="<%= dog.imagePath %>" alt="">       
+    <% } %>
+    
+  </figure> <br> <br>
+
+
+
+<p class="text-center"><%= dog.biodata %></p> <br>
+
+<% detail.forEach(el => {
+  if(dog.speciality == el.speciality) { %>
+    <div style="max-width: 30%; margin: auto;">
+      <p class="text-center"><%= el.detail %> </p> <br>
+    </div>
+<% }
+}) %>
+
+<p class="text-end" > <a href="" style="text-decoration: none; color: sienna; font-size: xx-large;">Rent me please</a> </p>
+
+
+</body>
+<%- include('partials/footer') %>
+</html>
