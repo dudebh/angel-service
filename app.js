@@ -7,6 +7,10 @@ const router = require('./routes')
 
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended: true}))
+
+const router = require('./routes')
+const dogsRouter = require('./routes/dogsRouter')
+
 app.use(session({
     secret: 'hacktive8 kiev-fox',
     resave: false,
@@ -15,6 +19,7 @@ app.use(session({
 
 
 app.use(router)
+app.use('/dogs', dogsRouter)
 
 app.listen(port,()=>{
     console.log(`app runing on port ${port}`);

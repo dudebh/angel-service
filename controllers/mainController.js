@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const passCompare = require('../helpers/bcryptCompare')
 
 class MainController{
-    static displayHome(req, res){
+    static displayHome (req, res){
         res.render('home',{title: 'Home'})
     }
 

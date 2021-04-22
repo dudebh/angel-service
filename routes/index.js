@@ -12,4 +12,5 @@ router.use(isLogin)
 
 router.get('/',Controller.displayHome)
 
+
 module.exports = router
