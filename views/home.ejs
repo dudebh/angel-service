@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/header') %>
+
 <body>
     <div class="container py-3">
         <%- include('partials/navbar') %>
@@ -8,12 +9,17 @@
             <h1>Welcome to Angel's Services</h1>
             <div style="padding: 10px">
                 <% data.forEach(e=>{ %>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<%= e.imagePath %>" class="card-img-top" alt="...">
+                    <div class="card dog-card">
+                        <% if(e.imagePath == null || e.imagePath == undefined) { %>
+                            <img src="https://wcc.yccd.edu/wp-content/uploads/2020/02/Dog.png" alt="" style=" max-width: 280px;" >
+                       <% }
+                        else { %>
+                            <img src="<%= e.imagePath %>" class="card-img-top" alt="...">                            
+                        <%} %>
                         <div class="card-body">
                           <h5 class="card-title"><%= e.name %></h5>
-                          <p class="card-text"><%= e.biodate %></p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <p class="card-text"><%= e.speciality %></p>
+                          <a href="/dogs/details/<%= e.id %>" class="btn btn-primary">See Details</a>
                         </div>
                     </div>
                 <% })%>

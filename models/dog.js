@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     species: DataTypes.STRING,
     birthYear: DataTypes.INTEGER,
     gender: DataTypes.STRING,
-    specialist: DataTypes.STRING,
+    speciality: DataTypes.STRING,
     availability: DataTypes.BOOLEAN,
     imagePath: DataTypes.STRING,
     biodata: DataTypes.STRING,

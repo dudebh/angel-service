@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": 123,
-    "database": "angelService",
+    "password": "123",
+    "database": "angel_service",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

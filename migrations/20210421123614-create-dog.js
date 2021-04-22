@@ -20,7 +20,7 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
-      specialist: {
+      speciality: {
         type: Sequelize.STRING
       },
       availability: {
