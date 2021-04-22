@@ -6,11 +6,11 @@
         "gender": "male",
         "speciality": "Autism Service Dogs",
         "availability": true,
-        "imagePath": "https://toppng.com//public/uploads/preview/dog-web-res-golden-retriever-service-dog-11562895164b0i48z6a8v.png",
+        "imagePath": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2016/11/08092232/service-dog-training-101.jpg",
         "biodata": "biodata of the dogs"
     },
     {
-        "name": "Pacman",
+        "name": "Pebo",
         "species": "Poodle",
         "birthYear": 2015,
         "gender": "male",
@@ -30,13 +30,13 @@
         "biodata": "biodata of the dogs"
     },
     {
-        "name": "Grace",
+        "name": "Bolu",
         "species": "German Shepperd",
         "birthYear": 2010,
         "gender": "female",
         "speciality": "Seizure Response Dogs",
         "availability": false,
-        "imagePath": "https://servicedogspot.com/images/grace.png",
+        "imagePath": "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc1MzEwODQ4NzMzMDI5NjE0/german-shepherd-service-dogs.jpg",
         "biodata": "biodata of the dogs"
     },
     {
@@ -56,7 +56,7 @@
         "gender": "male",
         "speciality": "Anxiety Alert Dogs",
         "availability": true,
-        "imagePath": "http://www.servicedogs.goldenheartk9s.org/images/sparrow.png",
+        "imagePath": "http://4.bp.blogspot.com/-iuYW_v2kWAA/Vo8WWENwpSI/AAAAAAAAjwU/LDA9A5NoRn8/s400/Service%2BDog%2B1.jpg",
         "biodata": "biodata of the dogs"
     },
     {

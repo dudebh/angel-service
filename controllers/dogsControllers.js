@@ -99,11 +99,59 @@ class DogController {
     }
 
     static displayEditDog (req, res) {
+        let id = req.params.id
 
+        Dog.findOne({
+            where: {
+                id: id
+            }
+        })
+        .then(result => {
+            res.render('adminViews/editDog', {dog: result})
+        })
     }
 
     static editDog (req, res) {
+        let id = req.params.id
 
+        let obj = {
+            name: req.body.name,
+            species: req.body.species,
+            birthYear: req.body.birthYear,
+            gender: req.body.gender,
+            speciality: req.body.speciality,
+            biodata: req.body.biodata,
+            updateAt: new Date()
+        }
+
+        Dog.update(obj, {
+            where: {
+                id: id
+            }
+        })
+        .then(() => {            
+            res.redirect('/dogs/admin')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static displayDetails (req, res) {
+        let id = req.params.id
+
+        Dog.findOne({
+            where: {
+                id: id
+            }
+        })
+        .then(result => {
+            // res.send(`di details`)
+            res.render('detailsDog', {dog: result})
+        })
+        .catch(err => {
+            res.send(err)
+        })
     }
 }
 

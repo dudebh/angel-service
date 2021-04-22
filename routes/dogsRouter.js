@@ -6,6 +6,8 @@ dogsRouter.get('/', DogController.displayDogs)
 
 dogsRouter.get('/retiredDog', DogController.displayRetiredDogs)
 
+dogsRouter.get('/details/:id', DogController.displayDetails)
+
 // admin only itu pake session?
 
 dogsRouter.get('/admin', DogController.displayDogsAdmin)

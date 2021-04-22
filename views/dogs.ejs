@@ -20,7 +20,7 @@
         <tbody>
             <% dogs.forEach((el, idx) => { %>
                <% if(idx % 2 != 0) { %>
-                    <tr style="background-color:rgb(226, 222, 222);"">
+                    <tr style="background-color:rgb(226, 222, 222);">
                <% } 
                 else { %>
                     <tr>
@@ -35,6 +35,9 @@
                     <td>
                         <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">
                             See Details
+                        </a>&nbsp;|&nbsp;
+
+                        <a href="/dogs/rent/<%= el.id %>" style="text-decoration: none; color:steelblue;">Rent
                         </a>
                     </td>
                 </tr>

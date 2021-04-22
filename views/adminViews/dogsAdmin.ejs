@@ -34,7 +34,7 @@
                     <td><%= el.speciality %></td>
                     <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                     <td>
-                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/edit/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
+                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
 
                         <% if (retired == true) { %>
                            &nbsp;|&nbsp;<a href="/dogs/delete/<%= el.id %>" onclick="return confirm('Are you sure you want to delete this cute doggo?')" style="text-decoration: none; color:steelblue;">Delete</a>
@@ -48,3 +48,11 @@
 </body>
 <%- include('../partials/footer') %>
 </html>
+
+
+<!-- nnti di hapus ato ubah cmn mempergmpng dev aja -->
+<h1 align="center">
+    <a href="/dogs/retiredDogAdmin">retired dogs admin</a>
+
+
+</h1>
