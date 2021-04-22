@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header', { title: 'Add a Service Dog'}) %>
+<%- include('../partials/header',{title: 'add service dog'}) %>
 <body>
-    <%- include('../partials/navbar') %>
-    <form action="/dogs/addDog" method="POST" align="center">
-        <h1 align="center">Add a Service Dog</h1> <br>
-        <label for="name">Name</label> <br>
-        <input type="text" name="name"> <br>
-    
-        <label for="species">Species</label> <br>
-        <input type="text" name="species"> <br>
-    
-        <label for="birthYear">Birth Year</label> <br>
-        <input type="number" name="birthYear"> <br>
-    
-        <label for="gender">Gender</label> <br>
-        
-        <input type="radio" name="gender" value="male">
-        <label for="">Male</label>
-        <input type="radio" name="gender" value="female">
-        <label for="">Female</label> <br>
-    
-        <label for="speciality">Speciality</label> <br>
-        <select name="speciality" name="speciality">
-            <option selected disabled>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---Select---
-            </option>
-            <option value="Autism Service Dogs">Autism Service Dogs</option>
-            <option value="Diabetic Alert Dogs">Diabetic Alert Dogs</option>
-            <option value="Hearing Service Dogs">Hearing Service Dogs</option>
-            <option value="Seizure Response Dogs">Seizure Response Dogs</option>
-            <option value="Anxiety Alert Dogs">Anxiety Alert Dogs</option>
-            <option value="Mobility Assistance Dogs">Mobility Assistance Dogs</option>
-        </select> <br>
 
-        <label for="imagePath">Image Path</label> <br>
-        <textarea type="text" name="imagePath" cols="60" rows="1"></textarea> <br>
-
-        <label for="biodata">Biodata</label> <br>
-        <textarea name="biodata" cols="60" rows="3"></textarea> <br> <br>
-        
-        
-        <button type="submit">Save</button>
-    </form>
+    <div class="container py-3">
+        <%- include('../partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/dogs/admin">Dogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user">User</a>
+                </li>
+            </ul>
+            <div style="text-align: left;padding-top: 20px;">
+                <form action="/dogs/addDog" method="POST" align="center">
+                    <h1 align="center">Add a Service Dog</h1> <br>
+                    <label for="name">Name</label> <br>
+                    <input type="text" name="name"> <br>
+                
+                    <label for="species">Species</label> <br>
+                    <input type="text" name="species"> <br>
+                
+                    <label for="birthYear">Birth Year</label> <br>
+                    <input type="number" name="birthYear"> <br>
+                
+                    <label for="gender">Gender</label> <br>
+                    
+                    <input type="radio" name="gender" value="male">
+                    <label for="">Male</label>
+                    <input type="radio" name="gender" value="female">
+                    <label for="">Female</label> <br>
+                
+                    <label for="speciality">Speciality</label> <br>
+                    <select name="speciality" name="speciality">
+                        <option selected disabled>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---Select---
+                        </option>
+                        <option value="Autism Service Dogs">Autism Service Dogs</option>
+                        <option value="Diabetic Alert Dogs">Diabetic Alert Dogs</option>
+                        <option value="Hearing Service Dogs">Hearing Service Dogs</option>
+                        <option value="Seizure Response Dogs">Seizure Response Dogs</option>
+                        <option value="Anxiety Alert Dogs">Anxiety Alert Dogs</option>
+                        <option value="Mobility Assistance Dogs">Mobility Assistance Dogs</option>
+                    </select> <br>
+            
+                    <label for="biodata">Biodata</label> <br>
+                    <textarea name="biodata" cols="60" rows="3"></textarea> <br>
+            
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
 </body>
-<%- include('../partials/footer') %>
 </html>
