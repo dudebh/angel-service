@@ -48,6 +48,7 @@ class MainController{
                         console.log(response);
                     }
                 });
+                res.send('silahkan cek emailmu untuk lakukan aktifasi')
             })
             .catch(err=>{
                 res.send(err)
