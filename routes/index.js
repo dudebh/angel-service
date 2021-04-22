@@ -6,6 +6,7 @@ router.get('/login',Controller.displayFormLogin)
 router.post('/login',Controller.createLoginSession)
 router.get('/register',Controller.displayFormRegister)
 router.post('/register',Controller.registerUser)
+router.get('/register/activation/:username',Controller.activation)
 
 router.use(isLogin)
 
