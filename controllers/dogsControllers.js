@@ -1,6 +1,7 @@
 const { Dog } = require('../models')
 const dogExplanation = require('../data/biodataOfServiceDogs.json')
 
+
 class DogController {
     static displayDogs (req, res) {
         Dog.findAll({
@@ -91,7 +92,8 @@ class DogController {
             res.redirect('/dogs/Admin')
         })
         .catch(err => {
-            res.send(err)
+            // console.log(err.errors);
+            res.render('errors', { errors: err.errors })
         })
     }
 
@@ -118,9 +120,10 @@ class DogController {
             gender: req.body.gender,
             speciality: req.body.speciality,
             availability: req.body.availability,
+            imagePath: req.body.imagePath,
             biodata: req.body.biodata,
             updateAt: new Date()
-        }        
+        }
 
         Dog.update(obj, {
             where: {
@@ -131,7 +134,7 @@ class DogController {
             res.redirect('/dogs/admin')
         })
         .catch(err => {
-            res.send(err)
+            res.render('errors', { errors: err })
         })
     }
 
