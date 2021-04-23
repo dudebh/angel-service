@@ -36,8 +36,13 @@
                             <td><%= el.speciality %></td>
                             <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                             <td>
-                                <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
-                                &nbsp;|&nbsp;<a href="/dogs/retiredDogAdmin/delete/<%= el.id %>" onclick="return confirm('Are you sure you want to delete this cute doggo?')" style="text-decoration: none; color:steelblue;">Delete</a>
+                                <a style="background-color: sienna;" class="btn btn-primary" href="/dogs/details/<%= el.id %>" role="button">See Details</a> &nbsp; &nbsp; &nbsp;
+                        
+                                <a style="background-color: teal;" class="btn btn-primary" href="/dogs/editDog/<%= el.id %>" role="button">Edit</a> &nbsp; &nbsp;
+
+                                <a style="background-color: rgb(255, 0, 0);" class="btn btn-primary" href="/dogs/retiredDogAdmin/delete/<%= el.id %>" onclick="return confirm('Are you sure you want to delete this cute doggo?')" role="button">
+                                    Delete
+                                </a>
                               
                             </td>
                         </tr>
