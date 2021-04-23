@@ -42,8 +42,8 @@ class MainController{
                 const mailOptions = {
                     from: "angelservice.cs@gmail.com",
                     to: data.email, 
-                    subject: 'Email Activasi',
-                    text: `silahkan klik link beriku untuk activasi account anda https://angel-service.herokuapp.com/register/activation/${data.username}`
+                    subject: 'Email Activasi Layanan Angel Service',
+                    text: `silahkan klik link beriku untuk aktifasi akun anda https://angel-service.herokuapp.com/register/activation/${data.username}`
                 }
                 smtpTransport.sendMail(mailOptions, function(error, response){
                     if(error){
@@ -70,10 +70,11 @@ class MainController{
                     console.log(data);
                     if(passCompare(password, data[0].password)){
                         if(data[0].activated){
-                            req.session.isLogin = true;
-                            req.session.username = data.username
-                            req.session.role = data.role
-                            console.log(req.session,"==> di controller");
+                            req.session.user = {}
+                            req.session.user.isLogin = true;
+                            req.session.user.UserId = data[0].id;
+                            req.session.user.username = data[0].username
+                            req.session.user.role = data[0].role
                             res.redirect('/')
                         }else{
                             res.send('Akunmu belum aktif')
@@ -109,6 +110,11 @@ class MainController{
 
     static showAdminView(req, res){
         res.render('adminViews/adminView',{title: 'admin'})
+    }
+
+    static killSession(req, res){
+        req.session.destroy();
+        res.redirect('/')
     }
 }
 

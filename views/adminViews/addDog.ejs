@@ -6,14 +6,7 @@
     <div class="container py-3">
         <%- include('../partials/navbar') %>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/dogs/admin">Dogs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/user">User</a>
-                </li>
-            </ul>
+            <%- include('./partialNavbar',{activeMenu: 'Dogs'}) %>
             <div style="text-align: left;padding-top: 20px;">
                 <form action="/dogs/addDog" method="POST" align="center">
                     <h1 align="center">Add a Service Dog</h1> <br>
@@ -60,8 +53,8 @@
                         <textarea class="form-control" aria-label="With textarea" name="biodata"></textarea>
                       </div>
             
-                    <button type="submit">Save</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <!-- <button type="submit">Save</button> -->
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </div>
         </div>

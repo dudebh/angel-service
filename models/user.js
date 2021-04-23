@@ -12,13 +12,35 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsToMany(models.Dog, {through:models.Transaction})
     }
   };
   User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate :{
+        notEmpty:{msg: 'Name tidak boleh kosong'}
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate :{
+        notEmpty:{msg: 'Email tidak boleh kosong'},
+        isEmail: {msg: 'Format email harus sesuai'}
+      }
+    },
+    username: {
+      type: DataTypes.STRING,
+      validate :{
+        notEmpty:{msg: 'Username tidak boleh kosong'}
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate :{
+        notEmpty:{msg: 'Password tidak boleh kosong'}
+      }
+    },
     role: DataTypes.STRING,
     activated: DataTypes.BOOLEAN
   }, {

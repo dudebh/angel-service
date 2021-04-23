@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+<body>
+    <div class="container py-3">
+        <%- include('../partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <%- include('./partialNavbar',{activeMenu: 'Users'}) %>
+            <% data.forEach(e=>{ %>
+                <div style="text-align: left;padding-top: 20px;">
+                        <h4 align="center">Change Role for User <strong><%= e.name %></strong></h4>
+                        <form action="/users/change-role/<%= e.id %>" method="POST">
+                            <select class="form-select" aria-label="Default select example" name="role">
+                                <option value="Admin" <%= (e.role === 'Admin')? 'selected' :'' %>>Admin</option>
+                                <option value="Konsumen" <%= (e.role === 'Konsumen')? 'selected' :'' %>>Konsumen</option>
+                                <option value="Manager" <%= (e.role === 'Manager')? 'selected' :'' %>>Manager</option>
+                            </select>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                </div>
+            <% }) %>
+
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+</html>

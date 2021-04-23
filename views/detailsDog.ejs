@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/header', { title: 'Detail Look of the Service Dog'}) %>
-<body align="center">
-    <%- include('partials/navbar') %>
-    <h1 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Hello My Name is <%= dog.name %>, Nice to Meet You</h1> <br>
-
-
-  <% if(dog.imagePath == null || dog.imagePath == undefined) { %>
-    <img src="https://wcc.yccd.edu/wp-content/uploads/2020/02/Dog.png" alt="" style="border-radius: 20px; width: 400px;" >
-    <% }
-    else { %>
-      <img src="<%= dog.imagePath %>" style="border-radius: 20px; max-width: 400px;"  alt="">
-    <% } %>
-
-<br> <br>
-
-<p class="text-center"><%= dog.biodata %></p> <br>
-
-<% detail.forEach(el => {
-  if(dog.speciality == el.speciality) { %>
-    <div style="max-width: 30%; margin: auto;">
-      <p class="text-center" style="font-size: x-large;"><%= el.detail %> </p> <br>
+<body>
+    <div class="container py-3">
+        <%- include('./partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <!-- <%- include('./adminViews/partialNavbar',{activeMenu: 'Dogs'}) %> -->
+            <h1 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Hello My Name is <%= dog.name %>, Nice to Meet You</h1> <br>
+            <div class="card mb-3">
+                <img class="card-img-top" src="<%= (dog.imagePath)? dog.imagePath : 'https://wcc.yccd.edu/wp-content/uploads/2020/02/Dog.png' %>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= dog.speciality %></h5>
+                  <% detail.forEach(el => {
+                    if(dog.speciality == el.speciality) { %>
+                      <p class="card-text"></p><%= el.detail %> </p> <br>
+                  <% }
+                  }) %>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                
+            </div>
+            <div style="text-align: left;">
+              <h4>Filed this form for rent</h4>
+              <form action="/rent/add-rent" method="POST">
+                <div class="form-group row">
+                  <div class="col-xs-2">
+                    <label for="exampleFormControlInput1" class="form-label">Start Date</label>
+                    <input type="text" class="form-control" name="start_date" id="exampleFormControlInput1" placeholder="YYYY-MM-DD">
+                  </div>
+                  <div class="col-xs-2">
+                    <label for="exampleFormControlInput1" class="form-label">End Date</label>
+                    <input type="text" class="form-control" name="end_date" id="exampleFormControlInput1" placeholder="YYYY-MM-DD">
+                  </div>
+                </div>
+                <br>
+                <input type="hidden" name="DogId" value="<%= dog.id %>">
+                <button type="submit" class="btn btn-primary">RENT</button>
+              </form>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>
     </div>
-<% }
-}) %>
-
-<a class="btn btn-primary" href="/dogs/rent/<%= dog.id %>" role="button">Rent Me Please</a>
-
 </body>
-<%- include('partials/footer') %>
 </html>

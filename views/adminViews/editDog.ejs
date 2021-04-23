@@ -6,14 +6,7 @@
     <div class="container py-3">
         <%- include('../partials/navbar') %>
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/dogs/admin">Dogs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/user">User</a>
-                </li>
-            </ul>
+            <%- include('./partialNavbar',{activeMenu: 'Dogs'}) %>
             <div style="text-align: left;padding-top: 20px;">
                 <form action="/dogs/editDog/<%= dog.id %>" method="POST" align="center">
                     <h1 align="center">Edit a Dog</h1> <br>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/header') %>
+
+<body>
+    <div class="container py-3">
+        <%- include('partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h4>Your Transaction Was Successful</h4>
+            <div style="padding: 10px">
+                <% data.forEach(e=>{ %>
+                    <table>
+                        <tr>
+                            <td>Your Name</td><td>: <%= e.name%></td>
+                        </tr>
+                        <tr>
+                            <td>Dog's Name</td><td>: <%= e.Dogs[0].name %></td>
+                        </tr>
+                        <tr>
+                            <td>Day(s)</td><td>: <%= e.Dogs[0].Transaction.getDays() %></td>
+                        </tr>
+                        <tr>
+                            <td>Price</td><td>: <%= e.Dogs[0].Transaction.getPrice() %></td>
+                        </tr>
+                    </table>
+                <% })%>
+            </div>
+        </div>
+        <%- include('partials/footer') %>
+    </div>
+</body>
+</html>

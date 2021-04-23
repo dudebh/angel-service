@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header', { title: 'Welcome to the Pack'}) %>
+<%- include('../partials/header',{title:'admin dog'}) %>
 <body>
-    <%- include('../partials/navbar') %>
-    <%- include('../partials/dogsHeading', { title: 'Welcome to the Pack'}) %>
-    <h4 align="center"><a style="text-decoration: none; color:teal;" href="addDog">Add a Service Dog</a></h4>
-    <%- include('../partials/theadStyle') %>
-        <thead>
-            <tr style="background-color:darkgray;">
-                <th>No</th>
-                <th>Name</th>
-                <th>Species</th>
-                <th>Birth Year</th>
-                <th>Gender</th>
-                <th>Speciality</th>
-                <th>Availability</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% dogs.forEach((el, idx) => { %>
-               <% if(idx % 2 != 0) { %>
-                    <tr style="background-color:rgb(226, 222, 222);">
-               <% } 
-                else { %>
-                    <tr>
-               <% } %>
-                    <td><%= idx + 1 %></td>
-                    <td><%= el.name %></td>
-                    <td><%= el.species %></td>
-                    <td><%= el.birthYear %></td>
-                    <td><%= el.gender %></td>
-                    <td><%= el.speciality %></td>
-                    <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
-                    <td>
-                        <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
-                        
-                    </td>
-                </tr>
-        <%  }) %>
-        </tbody>
-    </table>
+    <div class="container py-3">
+        <%- include('../partials/navbar') %>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <%- include('./partialNavbar',{activeMenu: 'Dogs'}) %>
+            <h4 align="center">Welcome to the Pack</h4>
+            <h4 align="center"><a style="text-decoration: none; color:teal;" href="addDog">Add a Service Dog</a></h4>
+            <table class="table table-striped" align="center">
+                <thead>
+                    <tr style="background-color:darkgray;">
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Species</th>
+                        <th>Birth Year</th>
+                        <th>Gender</th>
+                        <th>Speciality</th>
+                        <th>Availability</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% dogs.forEach((el, idx) => { %>
+                    <% if(idx % 2 != 0) { %>
+                            <tr style="background-color:rgb(226, 222, 222);">
+                    <% } 
+                        else { %>
+                            <tr>
+                    <% } %>
+                            <td><%= idx + 1 %></td>
+                            <td><%= el.name %></td>
+                            <td><%= el.species %></td>
+                            <td><%= el.birthYear %></td>
+                            <td><%= el.gender %></td>
+                            <td><%= el.speciality %></td>
+                            <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
+                            <td>
+                                <a href="/dogs/details/<%= el.id %>" style="text-decoration: none; color:steelblue;">See Details</a>&nbsp;|&nbsp;<a href="/dogs/editDog/<%= el.id %>" style="text-decoration: none; color:steelblue;">Edit</a>
+                                
+                            </td>
+                        </tr>
+                <%  }) %>
+                </tbody>
+            </table>
+        </div>
+        <%- include('../partials/footer') %>
+    </div>
 </body>
-<%- include('../partials/footer') %>
 </html>
-
-
-<!-- nnti di hapus ato ubah cmn mempergmpng dev aja -->
-<h1 align="center">
-    <a href="/dogs/retiredDogAdmin">retired dogs admin</a>
-
-
-</h1>

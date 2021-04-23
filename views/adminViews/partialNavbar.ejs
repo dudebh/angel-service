@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link <%= (activeMenu === 'Dogs')? 'active': '' %>" <%= (activeMenu === 'Dogs')? 'aria-current=page': '' %> href="/dogs/admin">Dogs</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link <%= (activeMenu === 'Retire')? 'active': '' %>" <%= (activeMenu === 'Retire')? 'aria-current=page': '' %> href="/dogs/retiredDogAdmin">Retired Dogs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link <%= (activeMenu === 'Users')? 'active': '' %>" <%= (activeMenu === 'Users')? 'aria-current=page': '' %> href="/users">User</a>
+    </li>
+</ul>

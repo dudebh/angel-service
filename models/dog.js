@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Dog.belongsToMany(models.User, {through:models.Transaction})
     }
   };
   Dog.init({

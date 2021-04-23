@@ -1,5 +1,5 @@
 const isLoginMiddleware = (req, res, next)=>{
-    if(req.session.isLogin){
+    if(req.session.user){
         next()
     }else{
         res.redirect('/login')
