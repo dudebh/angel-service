@@ -35,9 +35,7 @@
                     <td><%= el.speciality %></td>
                     <td><%= (el.availability == true) ? "Available": "Not Available"; %></td>
                     <td>
-                        <a style="background-color: sienna;" class="btn btn-primary" href="/dogs/details/<%= el.id %>" role="button">See Details</a> &nbsp; &nbsp; &nbsp;
-
-                        <a style="background-color: turquoise;" class="btn btn-primary" href="/dogs/rent/<%= el.id %>" role="button">Rent</a>
+                        <a style="background-color: sienna;" class="btn btn-primary" href="/dogs/details/<%= el.id %>" role="button">See Details</a> 
                     </td>
                 </tr>
         <%  }) %>
